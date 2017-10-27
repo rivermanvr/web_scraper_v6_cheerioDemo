@@ -15,6 +15,7 @@
   "author": "vince_rios",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -25,12 +26,18 @@
     "chalk": "^2.3.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
+    "fs": "0.0.1-security",
     "http": "0.0.0",
     "morgan": "^1.9.0",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
+    "pg": "^7.3.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
+    "sequelize": "^4.19.0",
     "webpack": "^3.8.1"
   }
 }
