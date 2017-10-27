@@ -20,6 +20,8 @@ app.use(morgan('dev'));
 
 app.use('/api', routes);
 
+// TESTS FOLLOW:
+
 let url = 'http://www.google.com';
 const file = fs.createWriteStream('result.html')
 
@@ -37,19 +39,19 @@ const file = fs.createWriteStream('result.html')
 //   .then(result => console.log(result))
 //   .catch(err => console.log('vin error: ', err));
 
-// test #3   ...request site and save the result (promise call)
+// test #3A   ...request site and save the result (promise call)
 
 // request(url)
 // .then(result => file.write(result))
 // .catch(err => console.log('vin error: ', err));
 
-// test #3   ...request site and save the result (promise call)
+// test #3B   ...request 2 sites (above & thiS) and review the saved result (promise call)
 
 // request(url)
 // .then(result => file.write(result))
 // .catch(err => console.log('vin error: ', err));
 
-// test #4   ...request site and use cheerio (promise call)
+// test #4   ...request site and use cheerio to extract contents (promise call)
 
 url = 'https://www.indeed.com/viewjob?jk=abe3124266f27566&q=redux+react&l=New+York%2C+NY&tk=1btfije3b1bt42e0&from=web';
 
