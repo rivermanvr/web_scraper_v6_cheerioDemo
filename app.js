@@ -73,13 +73,28 @@ const file = fs.createWriteStream('result.html')
 
   const scraper = require('./scraper');
   url = 'https://imgur.com/gallery/hj4NW';
+  const filePath = 'text.txt';
 
   //callback example:
 
-  scraper.imgScrape(url, (data) => {
-    console.log('data from scraper received');
-    console.log(data);
-  })
+  // scraper.imgScrape(url, (data) => {
+  //   console.log('data from scraper received');
+  //   console.log(data);
+  // })
+
+  //promise example
+  scraper.imgScrape2(url)
+    .then(data => {
+      console.log('data from scraper received');
+      fs.writeFile(filePath, JSON.stringify(data), (error) => {
+        if (error) {
+          console.log(error)
+        }
+        console.log('successfully wrote to', filePath);
+      })
+    })
+    .catch(err => console.log('error scraping data: ', err))
+
 
 
 /*******************************/
