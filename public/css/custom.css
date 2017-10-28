@@ -28,6 +28,30 @@
     visibility: hidden; }
   .contentVisible {
     visibility: visible; }
+  .fontS23H20 {
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 2.0; }
+  .fontS23H25 {
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 2.5; }
+  .fontS23H30 {
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 3.0; }
+  .fontS25H20 {
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 2.0; }
+  .fontS25H25 {
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 2.5; }
+  .fontS25H30 {
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 3.0; }
   .hr {
     width: 75%;
     height: 2px;

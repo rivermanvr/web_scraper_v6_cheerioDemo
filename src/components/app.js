@@ -13,6 +13,7 @@ export default function AppContainer() {
       <Switch>
         <Route exact path="/home" component={ Home } />
         <Route exact path="/indeed" component={ Indeed } />
+        <Route path="/" component={ Home } />
       </Switch>
     </div>
   )

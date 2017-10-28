@@ -83,17 +83,17 @@ const file = fs.createWriteStream('result.html')
   // })
 
   //promise example
-  scraper.imgScrape2(url)
-    .then(data => {
-      console.log('data from scraper received');
-      fs.writeFile(filePath, JSON.stringify(data), (error) => {
-        if (error) {
-          console.log(error)
-        }
-        console.log('successfully wrote to', filePath);
-      })
-    })
-    .catch(err => console.log('error scraping data: ', err))
+  // scraper.imgScrape2(url)
+  //   .then(data => {
+  //     console.log('data from scraper received');
+  //     fs.writeFile(filePath, JSON.stringify(data), (error) => {
+  //       if (error) {
+  //         console.log(error)
+  //       }
+  //       console.log('successfully wrote to', filePath);
+  //     })
+  //   })
+  //   .catch(err => console.log('error scraping data: ', err))
 
 
 

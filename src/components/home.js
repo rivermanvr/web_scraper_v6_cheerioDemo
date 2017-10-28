@@ -6,10 +6,10 @@ export default function Main() {
     <div className="marginT">
       <h3>Modules evaluated:</h3>
         <ul className="tabRight">
-          <h6><li>phantomjs & casper (automated testing)</li></h6>
-          <h6><li>selenium (automated testing)</li></h6>
-          <h6><li>jsdom</li></h6>
-          <h6><li>request & cheerio</li></h6>
+          <li className="fontS23H20">phantomjs & casper (automated testing)</li>
+          <li className="fontS23H20">selenium (automated testing)</li>
+          <li className="fontS23H20">jsdom</li>
+          <li className="fontS23H20">request & cheerio</li>
         </ul>
     </div>
   )

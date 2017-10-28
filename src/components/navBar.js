@@ -18,7 +18,7 @@ export default function Navbar(props) {
       { title: 'Indeed Example', path: '/indeed' }
     ];
     return (
-      <ul className="nav nav-tabs mainnav" style={ { marginBottom: '10px' } }>
+      <ul className="nav nav-tabs mainnav fontS23H20" style={ { marginBottom: '10px' } }>
         {
           tabs.map( tab => <Tab key={ tab.path } tab={ tab } path={ path } />)
         }
