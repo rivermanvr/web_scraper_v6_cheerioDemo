@@ -15,7 +15,9 @@ export default function Navbar(props) {
     const path = props.router.location.pathname;
     const tabs = [
       { title: 'Home', path: '/home' },
-      { title: 'Indeed Example', path: '/indeed' }
+      { title: 'Use Case', path: '/useCase' },
+      { title: 'MVP', path: '/mvp' },
+      { title: 'Future?', path: '/future' },
     ];
     return (
       <ul className="nav nav-tabs mainnav fontS23H20" style={ { marginBottom: '10px' } }>

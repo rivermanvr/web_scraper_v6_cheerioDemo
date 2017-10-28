@@ -3,7 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navBar';
 import Home from './home';
-import Indeed from './indeed';
+import useCase from './use_case';
+import MVP from './mvp';
+import Future from './future';
 
 export default function AppContainer() {
   return (
@@ -12,7 +14,9 @@ export default function AppContainer() {
       <Route render={ (router) => <Navbar router={ router } /> } />
       <Switch>
         <Route exact path="/home" component={ Home } />
-        <Route exact path="/indeed" component={ Indeed } />
+        <Route exact path="/useCase" component={ useCase } />
+        <Route exact path="/mvp" component={ MVP } />
+        <Route exact path="/future" component={ Future } />
         <Route path="/" component={ Home } />
       </Switch>
     </div>
