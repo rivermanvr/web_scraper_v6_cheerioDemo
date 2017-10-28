@@ -53,16 +53,33 @@ const file = fs.createWriteStream('result.html')
 
 // test #4   ...request site and use cheerio to extract contents (promise call)
 
-url = 'https://www.indeed.com/viewjob?jk=abe3124266f27566&q=redux+react&l=New+York%2C+NY&tk=1btfije3b1bt42e0&from=web';
+// url = 'https://www.indeed.com/viewjob?jk=abe3124266f27566&q=redux+react&l=New+York%2C+NY&tk=1btfije3b1bt42e0&from=web';
+// let content;
 
-request(url)
-.then(result => cheerio.load(result))
-.then($ => {
-  const jobTitle = $('.jobtitle font').text();
-  console.log('>>>>>>>>>Our Results: ')
-  console.log(jobTitle)
-})
-.catch(err => console.log('vin error: ', err));
+// request(url)
+// .then(result => cheerio.load(result))
+// .then($ => {
+//   const jobTitle = $('.jobtitle font').text();
+//   const location = $('.location').text();
+//   const jobSummary = $('#job_summary').text().slice(0, 450);
+
+//   content = { jobTitle, location, jobSummary };
+//   console.log('>>>>>>>>>Our Results: ')
+//   console.log(content);
+// })
+// .catch(err => console.log('vin error: ', err));
+
+// test #5  ..scrape an image callback and promise version
+
+  const scraper = require('./scraper');
+  url = 'https://imgur.com/gallery/hj4NW';
+
+  //callback example:
+
+  scraper.imgScrape(url, (data) => {
+    console.log('data from scraper received');
+    console.log(data);
+  })
 
 
 /*******************************/
