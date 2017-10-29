@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 
 import Navbar from './navBar';
 import SearchBar from './search_bar';
@@ -17,9 +18,12 @@ export default class AppContainer extends Component {
   }
 
   getUrl(url) {
-    console.log('>>>>>>>  in url function >>>>>>>>>')
-    this.setState({ url, results: 'nothing yet' })
-    console.log('>>>>>>>>>>>>>>>>')
+    axios.get('/api', { url })
+      .then(res => res.data)
+      .then(results => {
+        this.setState({ url, results });
+      })  
+      .catch(err => console.log(err))  
   }
 
   render() {

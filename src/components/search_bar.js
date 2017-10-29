@@ -20,7 +20,6 @@ export default class SearchBar extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="search-bar marginB">
         <label>Enter a url: </label>
