@@ -6,15 +6,21 @@ export default class SearchBar extends Component {
     this.state = { term: '' };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   onInputChange(ev) {
     const term = ev.target.value;
     this.setState({ term });
-    this.props.onSearchTermChange(term)
+  }
+
+  onButtonClick(ev) {
+    this.props.getUrl(this.state.term);
+    this.setState({ term: '' });
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="search-bar marginB">
         <label>Enter a url: </label>
@@ -22,7 +28,7 @@ export default class SearchBar extends Component {
           className="tabRight marginR"
           value ={ this.state.term }
           onChange={ this.onInputChange } />
-        <button className="btn btn-primary">Process</button>
+        <button onClick={ this.onButtonClick } className="btn btn-primary">Process</button>
         <hr />
       </div>
     );

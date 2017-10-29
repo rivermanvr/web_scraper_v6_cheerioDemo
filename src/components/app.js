@@ -8,13 +8,25 @@ import useCase from './use_case';
 import MVP from './mvp';
 import Future from './future';
 
+function getUrl(url) {
+  console.log('>>>>>>>  in url function >>>>>>>>>')
+  console.log(url)
+  console.log('>>>>>>>>>>>>>>>>')
+}
+
 export default function AppContainer() {
   return (
     <div className="container-fluid">
       <h2 className="marginB">Web-Scraping Demo</h2>
       <Route render={ (router) => <Navbar router={ router } /> } />
       <Switch>
-        <Route exact path="/mvp" component={ SearchBar } />
+        <Route 
+          exact path="/mvp" render={ () =>
+            <SearchBar
+              getUrl={getUrl}
+            />
+          }
+        />
       </Switch>
       <Switch>
         <Route exact path="/home" component={ Home } />
