@@ -20,7 +20,7 @@ export default function Navbar(props) {
       { title: 'Future?', path: '/future' },
     ];
     return (
-      <ul className="nav nav-tabs mainnav fontS23H20" style={ { marginBottom: '10px' } }>
+      <ul className="nav nav-tabs mainNav marginB fontS23H20">
         {
           tabs.map( tab => <Tab key={ tab.path } tab={ tab } path={ path } />)
         }

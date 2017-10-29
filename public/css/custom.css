@@ -68,6 +68,8 @@
   .marginLR {
     margin-left: 10px;
     margin-right: 10px; }
+  .marginR {
+    margin-right: 10px; }
   .marginT {
     margin-top: 20px; }
   .marginTLG {
@@ -88,6 +90,8 @@
     margin-top: -35px; }
   .moveUpSM {
     margin-top: -5px; }
+  .search-bar input {
+    width: 65%; }
   .tabRight {
     margin-left: 25px; }
   .tabRightLG {

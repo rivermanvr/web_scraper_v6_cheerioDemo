@@ -48,6 +48,7 @@
                             {% for info in jobInfo %}
                                 {% if loop.first %}
                             <ul>
+                                <li><strong>Name: </strong><em>{{ info.name }}</em></li>
                                 <li><strong>Job title: </strong><em>{{ info.jobTitle }}</em></li>
                                 <li><strong>Location: </strong> {{ info.location }}</li>
                                 <li><strong>Company Name: </strong> {{ info.companyName }}</li>
