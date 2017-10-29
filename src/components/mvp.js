@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function MVP() {
+export default function MVP(props) {
+  console.log(props)
   return (
-    <div>Hello MVP</div>
+    <div>
+      <label>url: </label>
+    </div>
   )
 }

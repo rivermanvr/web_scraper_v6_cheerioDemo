@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navBar';
@@ -8,33 +8,48 @@ import useCase from './use_case';
 import MVP from './mvp';
 import Future from './future';
 
-function getUrl(url) {
-  console.log('>>>>>>>  in url function >>>>>>>>>')
-  console.log(url)
-  console.log('>>>>>>>>>>>>>>>>')
-}
+export default class AppContainer extends Component {
+  constructor() {
+    super();
+    this.state = { url: '', results: '' };
 
-export default function AppContainer() {
-  return (
-    <div className="container-fluid">
-      <h2 className="marginB">Web-Scraping Demo</h2>
-      <Route render={ (router) => <Navbar router={ router } /> } />
-      <Switch>
-        <Route 
-          exact path="/mvp" render={ () =>
-            <SearchBar
-              getUrl={getUrl}
-            />
-          }
-        />
-      </Switch>
-      <Switch>
-        <Route exact path="/home" component={ Home } />
-        <Route exact path="/useCase" component={ useCase } />
-        <Route exact path="/mvp" component={ MVP } />
-        <Route exact path="/future" component={ Future } />
-        <Route path="/" component={ Home } />
-      </Switch>
-    </div>
-  )
+    this.getUrl = this.getUrl.bind(this);
+  }
+
+  getUrl(url) {
+    console.log('>>>>>>>  in url function >>>>>>>>>')
+    this.setState({ url, results: 'nothing yet' })
+    console.log('>>>>>>>>>>>>>>>>')
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <h2 className="marginB">Web-Scraping Demo</h2>
+        <Route render={ (router) => <Navbar router={ router } /> } />
+        <Switch>
+          <Route 
+            exact path="/mvp" render={ () =>
+              <SearchBar
+                getUrl={ this.getUrl }
+              />
+            }
+          />
+        </Switch>
+        <Switch>
+          <Route exact path="/home" component={ Home } />
+          <Route exact path="/useCase" component={ useCase } />
+          <Route 
+            exact path="/mvp" render={ () =>
+              <MVP
+                state={ this.state }
+              />
+            }
+          />
+          <Route exact path="/future" component={ Future } />
+          <Route path="/" component={ Home } />
+        </Switch>
+      </div>
+    )
+  }
 }
