@@ -6,20 +6,20 @@ const cheerio = require('cheerio');
 const _ = require('lodash');
 
 router.get('/', function(req, res, next) {
-  var url = "http://www.indeed.com/cmp/Fuze-Lab/jobs/Entry-Junior-PHP-Jquery-MySQL-Coder-Team-Member-01790db21236725e";
-
+  const url = req.query.url;
   request(url, function(err, resp, body) {
     var $ = cheerio.load(body);
-    var companyName = $('.company');
+    var companyName = $('.company').first();
     var companyNameText = companyName.text();
 
     var jobTitle = $('.jobtitle font');
     var jobTitleText = jobTitle.text();
 
-    var location = $('.location');
+    var location = $('.location').first();
     var locationText = location.text();
 
     var summary = $('#job_summary p');
+    if (summary.length === 0) summary = $('#job_summary');
     var summaryText = summary.text();
 
     var details = {
@@ -31,8 +31,6 @@ router.get('/', function(req, res, next) {
     };
 
     var detailsArray = _(details).toArray();
-
-    console.log(detailsArray);
     return res.send({ jobInfo: detailsArray });
   });
 });

@@ -18,12 +18,12 @@ export default class AppContainer extends Component {
   }
 
   getUrl(url) {
-    axios.get('/api', { url })
+    axios.get(`/api/?url=${url}`)
       .then(res => res.data)
       .then(results => {
         this.setState({ url, results });
       })  
-      .catch(err => console.log(err))  
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -32,7 +32,7 @@ export default class AppContainer extends Component {
         <h2 className="marginB">Web-Scraping Demo</h2>
         <Route render={ (router) => <Navbar router={ router } /> } />
         <Switch>
-          <Route 
+          <Route
             exact path="/mvp" render={ () =>
               <SearchBar
                 getUrl={ this.getUrl }
@@ -43,7 +43,7 @@ export default class AppContainer extends Component {
         <Switch>
           <Route exact path="/home" component={ Home } />
           <Route exact path="/useCase" component={ useCase } />
-          <Route 
+          <Route
             exact path="/mvp" render={ () =>
               <MVP
                 state={ this.state }

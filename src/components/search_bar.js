@@ -15,6 +15,7 @@ export default class SearchBar extends Component {
   }
 
   onButtonClick(ev) {
+    ev.preventDefault();
     this.props.getUrl(this.state.term);
     this.setState({ term: '' });
   }
